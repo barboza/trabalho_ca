@@ -1,0 +1,17 @@
+<html>
+<head>
+<script type="text/javascript"
+  src="dygraph-combined.js"></script>
+</head>
+<body>
+<div id="graphdiv"
+  style="width:500px; height:300px;"></div>
+<script type="text/javascript">
+  g2 = new Dygraph(
+    document.getElementById("graphdiv"),
+    "data.csv", // path to CSV file
+    {}          // options
+  );
+</script>
+</body>
+</html>
