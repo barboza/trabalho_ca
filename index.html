@@ -9,8 +9,16 @@
 <script type="text/javascript">
   g2 = new Dygraph(
     document.getElementById("graphdiv"),
-    "https://raw.github.com/rbarboza/trabalho_ca/master/data.csv", // path to CSV file
-    {}          // options
+    "https://raw.github.com/barboza/trabalho_ca/master/data.csv", // path to CSV file
+    {
+      customBars: true,
+      title: 'Compara&ccedil;&atilde;o de performance entre algoritmos',
+      xlabel: "Valores processados",
+      ylabel: "Tempo (s)",
+      showRoller: true,
+      legend: 'always',
+      labelsDivStyles: { 'textAlign': 'right'}
+    }          // options
   );
 </script>
 </body>
