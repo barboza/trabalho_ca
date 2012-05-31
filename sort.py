@@ -21,6 +21,26 @@ def getAvg(matrix):
     avg.append(sum(i)/len(i))
   return avg
 
+def getMax(matrix):
+  maxValue = []
+  for i in matrix:
+    maxValue.append(max(i))
+  return maxValue
+
+def getMin(matrix):
+  minValue = []
+  for i in matrix:
+    minValue.append(min(i))
+  return minValue
+
+def getArray(min_arr, avg_arr, max_arr):
+  arr = []
+  for i in range(len(min_arr)):
+    arr.append(str(min_arr[i])+';'+str(avg_arr[i])+';'+str(max_arr[i]))
+  return arr
+
+
+
 def getMatrix(arrays, count):
   matrix = []
   for i in range(count):
@@ -48,6 +68,18 @@ avg_quick = []
 avg_counting_small = []
 avg_counting_large = []
 avg_radix = []
+
+min_bubble = []
+min_quick = []
+min_counting_small = []
+min_counting_large = []
+min_radix = []
+
+max_bubble = []
+max_quick = []
+max_counting_small = []
+max_counting_large = []
+max_radix = []
 
 #bubble-quick
 for cicle in range(5):
@@ -120,7 +152,25 @@ avg_counting_small = getAvg(table_counting_small)
 avg_counting_large = getAvg(table_counting_large)
 avg_radix = getAvg(table_radix)
 
-dataTable = getMatrix([size_array,avg_bubble,avg_quick,avg_counting_small,avg_counting_large,avg_radix],Steps)
+min_bubble = getMin(table_bubble)
+min_quick = getMin(table_quick)
+min_counting_small = getMin(table_counting_small)
+min_counting_large = getMin(table_counting_large)
+min_radix = getMin(table_radix)
+
+max_bubble = getMax(table_bubble)
+max_quick = getMax(table_quick)
+max_counting_small = getMax(table_counting_small)
+max_counting_large = getMax(table_counting_large)
+max_radix = getMax(table_radix)
+
+arr_bubble = getArray(min_bubble,avg_bubble,max_bubble)
+arr_quick = getArray(min_quick,avg_quick,max_quick)
+arr_counting_small = getArray(min_counting_small,avg_counting_small,max_counting_small)
+arr_counting_large = getArray(min_counting_large,avg_counting_large,max_counting_large)
+arr_radix = getArray(min_radix,avg_radix,max_radix)
+
+dataTable = getMatrix([size_array,arr_bubble,arr_quick,arr_counting_small,arr_counting_large,arr_radix],Steps)
 
 
 createCSV.createCSV(dataTable, "data")
